@@ -1,0 +1,215 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Bitcount Prop Single Ink", system-ui;
+
+}
+
+body {
+    background-color: #252628;
+    background-image: url(https://i.pinimg.com/1200x/6c/67/fe/6c67fede2d49c2c88f072c625dce4908.jpg);
+}
+
+.layout {
+    display: grid;
+    grid-template-areas:
+        "navbar"
+        "filtros"
+        "productos"
+        "paginador"
+        "footer"
+    ;
+    margin: 10px;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+}
+
+.titulo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #c6ff33;
+}
+
+.navbar a {
+    grid-area: navbar;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    margin: 15px;
+    display: none;
+    transition: all 0.4s ease;
+    
+}
+
+.icono-menu {
+    color: #7d39eb;
+    margin: 10px;
+
+}
+
+.productos {
+    grid-area: productos;
+}
+
+.filtros {
+    width: 100;
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    color: #fefffc;
+    gap: 5px;
+
+
+}
+
+.card {
+    border-radius: 35px;
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 415px;
+    gap: 5px;
+    background-color: black;
+    border: solid #00ffff 3px;
+    color: #fefffc;
+    transition: all 0.4s ease;
+}
+.card:hover{
+     transform: scale(1.1);
+}
+
+.card-img {
+    width: 100%;
+    height: 325px;
+    padding: 10px;
+    object-fit: contain;
+}
+
+.card-button {
+    padding: 5px;
+    font-weight: bold;
+    font-size: 12px;
+    animation: all 0.4s ease;
+}
+.card-button:hover{
+background-color: #c6ff33;
+}
+
+.pagination {
+    display: flex;
+    gap: 0.3rem;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.pagination a {
+    color: #c6ff33;
+    font-weight: bold;
+    text-decoration: none;
+    border: 1px solid#7d39eb;
+    padding: 0.5rem;
+    background-color: #00000080;
+    cursor: pointer;
+}
+
+.paginador {
+    grid-area: paginador;
+    position: sticky;
+    bottom: 0;
+    background-color: black;
+    padding: 5px;
+}
+
+
+
+
+.footer {
+    grid-area: footer;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 10px;
+    padding: 5px;
+    gap: 5px;
+    align-items: center;
+    color: #fefffc;
+
+}
+
+@media (min-width: 576px) {
+    .layout {
+        display: grid;
+        grid-template-columns: 200px 1fr;
+        grid-template-areas:
+            "navbar filtros"
+            "navbar productos"
+            "footer paginador"
+        ;
+        margin: 10px;
+    }
+
+    .navbar {
+        grid-area: navbar;
+    }
+
+    .navbar a {
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;
+        margin: 15px;
+        color: #7d39eb;
+        gap: 10px;
+        font-size: 20px;
+        padding: 10px;
+    }
+
+    .icono-menu {
+        display: none;
+    }
+
+    .filtros {
+        margin: 15px;
+        display: flex;
+        color: #fefffc;
+        gap: 5px;
+    }
+
+    .productos {
+        grid-area: productos;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .card {
+    transition: all 0.4s ease;
+}
+.card:hover{
+    transform: scale(1.1);
+}
+    
+
+    .paginador {
+        grid-area: paginador;
+        position: sticky;
+        bottom: 0;
+        padding: 5px;
+        background-color: #00000080;
+        align-items: center;
+        text-align: end;
+    }
+
+    .footer {
+        grid-area: footer;
+        padding: 10px;
+
+
+    }
+}
